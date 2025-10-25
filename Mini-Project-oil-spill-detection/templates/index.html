@@ -195,8 +195,22 @@
   <nav class="navbar-custom">
     <div class="navbar-brand">🌊 AI Oil Spill</div>
     <div class="navbar-links">
+      <li><div id="google_translate_element"></div></li>
+            <script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                  { pageLanguage: "en" },
+                  "google_translate_element"
+                );
+              }
+            </script>
+
+            <script
+              type="text/javascript"
+              src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+            ></script>
       <a href="index.html" class="active-link">Detection</a>
-      <a href="map.html">Map</a>
+      <a href="{{ url_for('map_page') }}">Map</a>
     </div>
   </nav>
 
