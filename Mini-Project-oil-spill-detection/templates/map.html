@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oil Spill Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f4f7fb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-top: 20px;
+      color: #1a1a1a;
+    }
+
+    #map {
+      height: 90vh;
+      width: 90vw;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content {
+      font-size: 14px;
+      color: #222;
+    }
+
+    .popup-content ul {
+      margin-top: 5px;
+      padding-left: 20px;
+    }
+
+    .popup-content li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🌊 Oil Spill Visualization Map</h2>
+  <div id="map"></div>
+
+  <script>
+    // Initialize the map with a global view
+    const map = L.map("map").setView([0, 0], 2);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+    }).addTo(map);
+
+    // Fetch CSV file from the same folder
+    fetch("oil_spills.csv")
+      .then((response) => response.text())
+      .then((csvText) => {
+        Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: function (results) {
+            const data = results.data;
+            const locationData = {};
+            const markers = [];
+
+            // Group spills by latitude + longitude
+            data.forEach((row) => {
+              const key = `${row.latitude},${row.longitude}`;
+              if (!locationData[key]) {
+                locationData[key] = {
+                  location: row.location,
+                  latitude: parseFloat(row.latitude),
+                  longitude: parseFloat(row.longitude),
+                  spills: [],
+                };
+              }
+              locationData[key].spills.push({
+                time: row.time,
+                reported_by: row.reported_by,
+              });
+            });
+
+            // Plot all locations
+            Object.values(locationData).forEach((spot) => {
+              const count = spot.spills.length;
+              let color = "green";
+              if (count === 2) color = "orange";
+              else if (count > 2) color = "red";
+
+              const circle = L.circleMarker([spot.latitude, spot.longitude], {
+                radius: 10,
+                fillColor: color,
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8,
+              }).addTo(map);
+
+              markers.push(circle);
+
+              // Build popup
+              let popupHTML = `
+                <div class="popup-content">
+                  <b>${spot.location}</b><br>
+                  <b>Oil Spills:</b> ${count}
+                  <ul>
+              `;
+              spot.spills.forEach((s) => {
+                popupHTML += `<li><b>By:</b> ${s.reported_by} <br>🕒 ${s.time}</li>`;
+              });
+              popupHTML += `</ul></div>`;
+
+              circle.bindPopup(popupHTML);
+              circle.on("mouseover", function () { this.openPopup(); });
+              circle.on("mouseout", function () { this.closePopup(); });
+            });
+
+            // Fit map bounds to show all markers
+            if (markers.length > 0) {
+              const group = new L.featureGroup(markers);
+              map.fitBounds(group.getBounds().pad(0.2));
+            }
+          },
+        });
+      })
+      .catch((err) => {
+        console.error("Error loading CSV:", err);
+      });
+  </script>
+</body>
+</html>

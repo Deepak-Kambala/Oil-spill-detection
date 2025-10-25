@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: oil-detection-app
+    env: python
+    region: oregon
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    plan: free
+    pythonVersion: 3.11.6
