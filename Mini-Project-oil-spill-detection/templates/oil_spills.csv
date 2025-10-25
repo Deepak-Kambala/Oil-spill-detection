@@ -1,10 +1,68 @@
 location,latitude,longitude,time,reported_by
-Chennai,13.0827,80.2707,2025-10-25 10:30:00,Ship A
-Mumbai,19.076,72.8777,2025-10-25 11:00:00,Ship B
-Chennai,13.0827,80.2707,2025-10-25 12:00:00,Ship C
-Vizag,17.6868,83.2185,2025-10-25 12:30:00,Ship D
-Chennai,13.0827,80.2707,2025-10-25 13:00:00,Ship E
-Kolkata,22.5726,88.3639,2025-10-25 14:15:00,Ship F
-Mumbai,19.076,72.8777,2025-10-25 15:00:00,Ship G
-Goa,15.2993,74.124,2025-10-25 15:45:00,Ship H
-Vizag,17.6868,83.2185,2025-10-25 16:30:00,Ship I
+Singapore Strait,1.16611,103.94472,15-05-2019 09:30,MT Ever Given
+Rotterdam,51.9906,4.2719,01-01-2023 04:00,MV Maersk Triple-E
+Panama Canal,9.1066,79.8143,20-11-2005 18:45,MV COSCO Shipping
+English Channel,50.7,0.3,10-02-1995 07:10,FV Jolly Roger
+Suez Canal,30.48,32.44,05-03-2021 11:20,MV HMM Algeciras
+Shanghai,31.4304,121.5737,22-07-2022 13:00,MT Sinopec Star
+New York Harbor,40.56,73.9,14-04-1988 23:55,USCG Cutter Block
+Cape Town,33.8249,18.5241,18-12-2001 02:15,MV Safmarine
+Fremantle,32.1569,115.8489,06-09-2016 16:30,MV Kookaburra
+Hamburg,53.6511,9.8937,25-03-2015 10:00,MV MSC Gayan
+Malacca Strait,3.3,100.2,11-11-2017 08:00,MT Blue Sky
+Hong Kong,22.4193,114.0694,03-10-1999 19:15,MV OOCL Atlanta
+Santos,23.8608,46.433,29-04-2014 05:40,MV Brazil Express
+Vancouver,49.3827,123.2207,07-06-2020 21:05,MV Pacific Star
+Piraeus,37.8405,23.7475,19-08-2008 17:00,MV Aegean Glory
+Gdansk,54.452,18.5466,24-01-1980 01:30,MT Baltic Trader
+Durban,29.7587,31.1218,17-02-2011 12:45,MV African Unity
+Jeddah,21.3858,39.2925,09-10-2013 06:10,MV Saudi Crown
+Yokohama,35.5437,139.538,26-03-2024 14:00,MV Japan Rainbow
+Port Louis,20.0601,57.6029,04-12-1992 03:20,FV Mauritian Pride
+Oslo Fjord,59.91,10.55,13-05-2007 09:15,MV Viking Star
+Lisbon,38.6223,9.2393,28-10-2018 20:30,MV Portugal Express
+Valparaiso,32.947,71.7127,15-09-2012 11:00,MV Chilean Harvest
+Aqaba,29.4323,35.1061,02-02-1985 07:45,MV Jordanian Flag
+Casablanca,33.4731,7.6898,12-07-2003 15:55,MT Moroccan Sun
+Dublin,53.4498,6.1603,30-01-2022 00:10,MV Irish Ferry
+Haifa,32.7202,35.0904,08-04-2010 14:25,MV Israeli Star
+Marseille,43.1965,5.4698,21-11-1997 10:05,MV French Riviera
+Naples,40.7518,14.3681,16-06-2006 18:00,MV Italian Spirit
+Boston Harbor,42.2601,71.1589,05-08-1983 01:50,MV American Eagle
+Kingston,17.8941,76.8936,27-09-2016 05:10,MV Jamaican Queen
+Lagos,6.4244,3.4792,03-03-2019 13:40,MV Nigerian Hope
+Rio de Janeiro,22.8068,43.2729,14-10-2023 22:00,MT Petrobras
+Abidjan,5.2167,4.1333,06-11-1981 11:15,MV Ivory Star
+Copenhagen,55.5761,12.6683,18-01-2017 06:20,MV Danish Delight
+Seattle,47.5062,122.4321,23-04-1996 16:50,MV Alaskan Way
+Manila,14.4995,121.0842,09-12-2009 08:30,MV Philippine Clipper
+Gulf of Aden,12.7,48.2,01-07-2015 03:00,US Navy Patrol
+Biscay Bay,45.2,4.8,17-03-1990 19:10,MV Spanish Raider
+Black Sea,43.2,36.2,26-02-2022 10:40,MV Odessa Star
+Strait of Hormuz,26.76,56.34,07-08-2018 15:25,MT Iranian Dawn
+Great Barrier Reef,18.48,147.25,22-05-2014 04:50,MV Reef Observer
+Buenos Aires,34.5037,58.4816,19-09-2004 09:00,MV Argentinian Tango
+Colombo,6.8271,79.9612,11-04-2023 13:15,MV Ceylon Pearl
+Genoa,44.3056,9.0463,04-02-1989 17:30,MV Ligurian Hope
+Helsinki,60.0699,25.0384,13-11-2021 21:00,MV Finnish Line
+Gibraltar Strait,36.15,5.3,29-06-2000 07:20,MV Med Passage
+Alexandria,31.1001,30.0187,20-10-1994 12:50,MV Egyptian Pharaoh
+Dalian,38.814,121.7147,02-01-2013 16:10,MV China Cargo
+Baltimore,39.1904,76.7122,24-03-2024 01:35,MV Dali
+Chennai,13.1827,80.3707,28-01-2017 00:00,MT Dawn kanchipuram
+Mumbai,18.176,72.9777,07-08-2010 11:00,MV MSC Chitra and MV Khalijia-III
+Chennai,13.1827,80.3707,28-01-2017 00:00,BW Maple
+Vizag,17.64568,83.461484,12-10-2020 12:30,MV Maa
+Kolkata,22.4726,88.4639,25-10-2025 14:15,MV Tiger Spring & MV Green Valley
+Mumbai,18.758022,72.9777,08-08-2023 15:00,ONGC uran plant
+Tobago,11.25989,60.491883,03-08-1978 15:30,American express
+Gulf of Mexico,19.79722,93.210338,03-06-1979 03:30,Ixtoc I
+Portsall rocks,48.672466,4.628297,16-03-1978,Amoco Cadiz
+Saldanha Bay,33.154193,17.881966,06-08-1983 06:20,Castillo de Bellver
+Arabian Gulf,27.674637,50.802327,19-01-1991,RMS Titanic
+Kolkata,22.4726,88.4639,13-06-2018 14:15,MV SSL Kolkata
+Kolkata,22.4726,88.4639,16-06-2021 14:15,MV Devon
+Kolkata,22.4726,88.4639,25-08-2024 14:15,ITT Puma
+Hong Kong,22.4193,114.0694,08-10-1997 17:40,Adrian Maersk
+Hong Kong,22.4193,114.0694,21-02-2019 12:30,Maersk
+Santos,23.8608,46.433,31-01-2012 22:30,FPWSO Dynamic Producer

@@ -9,9 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
   <style>
     body {
+      top: 30px;
       margin: 0;
       font-family: "Poppins", sans-serif;
-      background: #f4f7fb;
+      background:  linear-gradient(180deg, #071a3d, #0d1a26);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -19,7 +20,7 @@
 
     h2 {
       margin-top: 20px;
-      color: #1a1a1a;
+      color: #fffdfd;
     }
 
     #map {
@@ -43,9 +44,70 @@
     .popup-content li {
       margin-bottom: 5px;
     }
+    .navbar-custom {
+      width: 90%;
+      background-color: #071a3d;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .navbar-links a {
+      color: #cfd9ff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .navbar-links a:hover {
+      color: #5bc58b;
+    }
+
+    .active-link {
+      color: #5bc58b !important;
+      border-bottom: 2px solid #5bc58b;
+      padding-bottom: 2px;
+    }
+
   </style>
 </head>
 <body>
+    <!-- 🌐 Navigation Bar -->
+  <nav class="navbar-custom">
+    <div class="navbar-brand">🌊 AI Oil Spill</div>
+    <div class="navbar-links">
+      <li><div id="google_translate_element"></div></li>
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                { pageLanguage: "en" },
+                "google_translate_element"
+              );
+            }
+          </script>
+
+          <script
+            type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          ></script>
+      <a href="{{ url_for('home')}}" class="active-link">Detection</a>
+      <a href="{{ url_for('map_page') }}">Map</a>
+    </div>
+  </nav>
   <h2>🌊 Oil Spill Visualization Map</h2>
   <div id="map"></div>
 

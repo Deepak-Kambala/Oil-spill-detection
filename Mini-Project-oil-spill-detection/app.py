@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import numpy as np
 import tensorflow as tf
 from keras.models import load_model
@@ -34,6 +34,18 @@ def load_and_preprocess_image(image_bytes):
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/map')
+def map_page():
+    return render_template('map.html')
+
+@app.route('/oil_spills.csv')
+def serve_csv():
+    try:
+        return send_file('templates/oil_spills.csv', mimetype='text/csv')
+    except Exception as e:
+        print(f"Error serving CSV: {e}")
+        return "CSV file not found", 404
 
 @app.route('/predict', methods=['POST'])
 def predict():
